@@ -31,7 +31,7 @@ export default function AddMovie() {
             }).catch((err) => {
                 alert(err);
             })
-            history.push("/");  
+            history.push("/movie-store");  
         }              
     }
 
