@@ -33,13 +33,13 @@ const columns = [
         <div>
             <Link to={`/update-movie/${cellValues.row._id}`}>
         <Button
-          variant="text"
+          variant="contained"
           color="primary"
           onClick={(event) => {
             updateUpUser(event, cellValues.row.role,cellValues.row._id);
             console.log(cellValues.row._id)
           }}>
-              UP
+              Update
         </Button></Link>
         </div>
 
