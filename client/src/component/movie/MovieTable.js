@@ -92,7 +92,6 @@ function MovieTable() {
 
   return (
       <div>
-          <hr/>
           
           <center><h3>Movie Table</h3></center>
       <center>
