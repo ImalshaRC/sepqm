@@ -138,7 +138,7 @@ export default function MovieStore() {
             <i></i>
             <div className="tableContent">     
 
-            <div>
+            <div className="d-flex align-items-center container">
             <Grid
                 container
                 spacing={2}
@@ -153,7 +153,7 @@ export default function MovieStore() {
                         <div className="">  
                             <div className="row">
                                 <div className="col">
-                                    <div className="mx-2">
+                                    <div className="mx-2 mb-4">
                                         <Card sx={{ maxWidth: 345 }}>
                                             <CardActionArea>
                                                 <CardMedia
@@ -175,9 +175,9 @@ export default function MovieStore() {
                                                 </CardContent>
                                             </CardActionArea>
                                             <CardActions>
-                                                <Button size="small" color="primary">
+                                                <Link to={`/add-payment`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
                                                     Book now
-                                                </Button>
+                                                </Button></Link>
                                                 <Link to={`/show-movie/${movie._id}`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
                                                     Show Details
                                                 </Button></Link>

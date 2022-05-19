@@ -23,6 +23,7 @@ app.use(cookieParser());
 const userRouter = require("./routes/User/User.js");
 const authRouter = require("./routes/User/Auth.js");
 const movieRouter = require("./routes/movie/Movie.js");
+const paymentRouter = require("./routes/payment/Payment.js");
 
 app.get('/',(req, res)=>{
     res.send("Hello from node");
@@ -31,6 +32,7 @@ app.get('/',(req, res)=>{
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
 app.use("/movie", movieRouter);
+app.use("/payment", paymentRouter);
 
 mongoose.connect(process.env.MONGO_URI, {
         useNewUrlParser: true
