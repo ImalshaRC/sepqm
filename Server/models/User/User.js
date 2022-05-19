@@ -9,7 +9,15 @@ const { boolean, string } = require('joi');
 
 const userData = new schema ({
     
+    userName: {
+        type: String,
+        required: true
+    },
     email: {
+        type: String,
+        required: true
+    },
+    phone: {
         type: String,
         required: true
     },

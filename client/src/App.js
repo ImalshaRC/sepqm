@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom
 import AddMovie from "./component/movie/AddMovie";
 import MovieList from "./component/movie/MovieList";
 import MovieStore from "./component/movie/MovieStore";
+import ShowMovie from "./component/movie/ShowMovie";
 import Test from "./component/movie/Test";
 import UpdateMovie from "./component/movie/UpdateMovie";
 import LandedPage from "./component/register/LandedPage";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/add-movie" exact component={AddMovie}/>
           <Route path="/movie-store" exact component={MovieStore}/>
           <Route path="/movie-list" exact component={MovieList}/>
+          <Route path="/show-movie/:id" exact component={ShowMovie}/>
           <Route path="/update-movie/:id" exact component={UpdateMovie}/>
 
           <Route path="/test" exact component={Test}/>

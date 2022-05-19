@@ -48,7 +48,9 @@ export default function SignUp() {
   let history = useHistory();
 
   const [user, setUser] = useState({
+    userName: "",
     email: "",
+    phone: "",
     designation: "",
     password: "",
     rePassword: ""
@@ -58,7 +60,7 @@ export default function SignUp() {
 
   const [error, setError] = useState("");
 
-  const { email, designation, password, rePassword } = user;
+  const { userName, email, phone, designation, password, rePassword } = user;
 
   const onInputChange = e => {
       setUser({...user, [e.target.name]: e.target.value});
@@ -133,27 +135,16 @@ export default function SignUp() {
           Sign up
         </Typography>
         <form onSubmit={ e => onSubmit(e)} className={classes.form} noValidate>
-          <Grid container spacing={2}>               
+          <Grid container spacing={2}>  
+            <Grid item xs={12}>
+              <TextField variant="outlined" required fullWidth label="User Name" name="userName" value={userName} onChange={ e => onInputChange(e)}/>
+            </Grid>             
             <Grid item xs={12}>
               <TextField variant="outlined" required fullWidth label="Email Address" name="email" value={email} autoComplete="email" onChange={ e => onInputChange(e)}/>
             </Grid>
-
-            {/* <Grid item xs={12}>
-              <FormControl fullWidth variant="outlined" className={classes.formControl}>
-                <InputLabel htmlFor="filled-age-native-simple">Position</InputLabel>
-
-                  <Select native name="designation" value={designation} onChange={ e => onInputChange(e)}>
-                    <option aria-label="None" />
-                    <option value="customer">Customer Management</option>
-                    <option value="employee">Employee Management</option>
-                    <option value="product">Product Management</option>
-                    <option value="outlet">Outlet Management</option>
-                    <option value="machine">Machine Management</option>
-                    <option value="order">Order Management</option>
-                    <option value="transport">Transport Management</option>
-                  </Select>
-                </FormControl>
-              </Grid> */}
+            <Grid item xs={12}>
+              <TextField variant="outlined" required fullWidth label="Phone No" name="phone" value={phone} onChange={ e => onInputChange(e)}/>
+            </Grid>
             
             <Grid item xs={12}>
               <TextField variant="outlined" required fullWidth name="password" value={password} label="Password" type="password" onChange={ e => onInputChange(e)}
@@ -163,14 +154,7 @@ export default function SignUp() {
             <Grid item xs={12}>
               <TextField variant="outlined" required fullWidth name="rePassword" value={rePassword} label="Re Enter Password" type="password" onChange={ e => onInputChange(e)}
                     autoComplete="current-password"/>
-            </Grid>            
-
-            {/* <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid> */}
+            </Grid> 
           </Grid>
           <Button
             type="submit"

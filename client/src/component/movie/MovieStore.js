@@ -125,7 +125,7 @@ export default function MovieStore() {
                     </button>                     */}
                 </div>
                 </div>
-                <form className="searchBar">
+                <form className="searchBar mb-5">
                 <input type="text" onChange={ e => handlesearchArea(e.target.value)} placeholder="Search here..."/>
                     <button type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-search" viewBox="0 0 16 16">
@@ -176,11 +176,11 @@ export default function MovieStore() {
                                             </CardActionArea>
                                             <CardActions>
                                                 <Button size="small" color="primary">
-                                                Book now
+                                                    Book now
                                                 </Button>
-                                                <Button size="small" color="primary">
-                                                Show Details
-                                                </Button>
+                                                <Link to={`/show-movie/${movie._id}`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
+                                                    Show Details
+                                                </Button></Link>
                                             </CardActions>
                                         </Card>
                                     </div>
