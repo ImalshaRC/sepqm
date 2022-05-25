@@ -10,14 +10,13 @@ function Dashboard() {
     return(
         <div>
             <Header/>
-
             <Routes>
-                <Route path="/movie-list/add-movie"  element={<AddMovie/>}/>
-                <Route path="/movie-store/add-movie"  element={<AddMovie/>}/>
-                <Route path="/movie-store"  element={<MovieStore/>}/>
                 <Route path="/movie-list"  element={<MovieList/>}/>
-                <Route path="/movie-store/show-movie/:id"  element={<ShowMovie/>}/>
+                <Route path="/movie-list/add-movie"  element={<AddMovie/>}/>
                 <Route path="/movie-list/update-movie/:id"  element={<UpdateMovie/>}/>
+                <Route path="/movie-store"  element={<MovieStore/>}/>
+                <Route path="/movie-store/show-movie/:id"  element={<ShowMovie/>}/>
+                <Route path="/movie-store/add-movie"  element={<AddMovie/>}/>
             </Routes>
         </div>
     )
