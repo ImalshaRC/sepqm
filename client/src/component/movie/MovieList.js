@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
-import { Link, useHistory } from 'react-router-dom';
+import { useNavigate, Routes, Route } from "react-router-dom";
 import MovieTable from "./MovieTable";
 
 import Button from '@mui/material/Button';
@@ -40,10 +40,10 @@ export default function MovieList() {
         }
     }
 
-    let history = useHistory();
+    let navigate = useNavigate();
 
     const goToAddMovie = () => {
-        history.push("/add-movie");
+        navigate("add-movie");
     }
 
     const  [movieID, setMovieID] = useState("");
@@ -66,7 +66,9 @@ export default function MovieList() {
     }
 
     return(
-        <div><hr/>
+        <div>
+            
+            <hr/>
 
     <Button variant="contained" color="primary" onClick={goToAddMovie}> Add Movie</Button>
 

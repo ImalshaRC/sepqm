@@ -64,7 +64,7 @@ export default function SignIn() {
               await axios.post('http://localhost:5000/auth/find/', user).then((res) => {
                 // cookies.set("token", res.data.data);
                 // cookies.set("designation", res.data.data);
-                window.location = ("/section");
+                window.location = ("/dashboard");
               })
                       
           }catch(error){

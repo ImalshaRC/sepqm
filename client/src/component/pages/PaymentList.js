@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import PaymentTable from './PaymentTable'
 
@@ -46,7 +46,7 @@ export default function PaymentList() {
         }
     }
 
-    let history = useHistory();
+    let history = useNavigate();
 
     const goToAddPayment = () => {
         history.push("/add-payment");

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function ShowMovie() {
 
-    let history = useHistory();
+    let history = useNavigate();
     const { id } = useParams();
 
     useEffect(() => {
@@ -116,26 +116,22 @@ export default function ShowMovie() {
                     <table class="payment-table">
                         <tr>
                             <td>
-                                Movie Name
-                                <input type="text" name="name" value={name} placeholder="Enter Code"/><br/>
+                                Movie Name:{name}<br/>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Movie Description
-                                <input type="text" name="description" value={description} placeholder="Enter Product Name"/><br/>
+                                Movie Description: {description}<br/>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Cast
-                                <input type="text" name="cast" value={cast} placeholder="Enter Price"/><br/>
+                                Cast: {cast}<br/>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Show Time
-                                <input type="text" name="showTime" value={showTime} placeholder="Enter Your Color"/><br/>
+                                Show Time: {showTime}<br/>
                             </td>
                         </tr>                        
                         
@@ -145,7 +141,7 @@ export default function ShowMovie() {
                         <table>
                             <tr>
                                 <td>
-                                    <Link to="/movie-store"><button type = "reset" class="button">Back</button></Link>                            
+                                    <Link to="/dashboard/movie-store"><button type = "reset" class="button">Back</button></Link>                            
                                 </td>
                             </tr>
                         </table>

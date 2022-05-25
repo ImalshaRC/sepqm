@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {  Button, Grid, Link, Paper, TextField, Typography } from "@mui/material";
 
 export default function UpdateMovie() {
 
-    let history = useHistory();
+    let history = useNavigate();
     const { id } = useParams();
 
     

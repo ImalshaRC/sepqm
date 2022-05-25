@@ -22,13 +22,13 @@ router.route("/add").post(async (req, res) => {
     
     var mailOptions = {
         from: 'realasia@gmail.com',
-        to: 'chaminduimalsha@gmail.com',
+        to: req.body.email,
         subject: 'Welcome to Movie App! You successfully created account.',
         text: 'That was easy!',
         html: `<p><em>To veirfy your account please click <a href="${link}" target="_blank" rel="noopener">Here</a>.</em></p>`
     };
 
-	try {		
+	try {	
         const { error } = validate(req.body.user);
         const user = await User.findOne({ email: req.body.email });
 
@@ -38,11 +38,12 @@ router.route("/add").post(async (req, res) => {
         else if (user){
             return res.status(409).send({ message: "User with given email already Exist!" });
         }
-        else{
-
+        else{ 
             transporter.sendMail(mailOptions, async function(error, info){
                 if (error) {
+    
                     console.log(error);
+    
                 } else {
                     console.log('Email sent: ' + info.response);
 

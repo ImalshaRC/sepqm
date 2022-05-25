@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -54,10 +54,10 @@ export default function MovieStore() {
         }
     }
 
-    let history = useHistory();
+    let history = useNavigate();
 
     const goToAddMovie = () => {
-        history.push("/add-movie");
+        history("add-movie");
     }
 
     const  [movieID, setMovieID] = useState("");
@@ -81,16 +81,6 @@ export default function MovieStore() {
 
     return(
         <div>
-
-
-
-
-
-
-
-
-
-
 
             <Dialog
                 open={open}
@@ -117,9 +107,7 @@ export default function MovieStore() {
             <div className="searchPanel">
                 <div className="searchPanel_addNew">
                 <div className="d-flex">
-                    <button className="newCustomer_btn" onClick={goToAddMovie}>
-                        Add Movie
-                    </button>
+                    <Button variant="contained" color="primary" onClick={goToAddMovie}> Add Movie</Button>
                     {/* <button onClick={goToProductSummary} className="newCustomer_btn mx-4">
                         Product Summary
                     </button>                     */}
@@ -175,10 +163,10 @@ export default function MovieStore() {
                                                 </CardContent>
                                             </CardActionArea>
                                             <CardActions>
-                                                <Link to={`/add-payment`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
+                                                <Link to={`add-payment`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
                                                     Book now
                                                 </Button></Link>
-                                                <Link to={`/show-movie/${movie._id}`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
+                                                <Link to={`show-movie/${movie._id}`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
                                                     Show Details
                                                 </Button></Link>
                                             </CardActions>

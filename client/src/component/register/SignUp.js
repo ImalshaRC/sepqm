@@ -19,7 +19,7 @@ import FormControl from '@material-ui/core/FormControl';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
 
-  let history = useHistory();
+  let history = useNavigate();
 
   const [user, setUser] = useState({
     userName: "",
@@ -74,7 +74,7 @@ export default function SignUp() {
         try{
             await axios.post('http://localhost:5000/user/add/', user).then(() => {
                 alert(email + " Please check your email to verify your account.");
-                history.push("/signin");
+                history("/signin");
             })     
         }
         catch(err){

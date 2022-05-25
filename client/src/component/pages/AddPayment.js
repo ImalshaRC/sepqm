@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 
 import {  Button, Grid, Link, Paper, TextField, Typography } from "@mui/material";
@@ -11,7 +11,7 @@ const btnStyle={margin:'8px 0'};
 
 export default function AddPayment() {
 
-    let history = useHistory();
+    let history = useNavigate();
     const { id } = useParams();
 
     const [payment, setPayment] = useState({

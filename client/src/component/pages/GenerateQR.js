@@ -3,13 +3,13 @@ import { Container, Card, CardContent, makeStyles, Grid, TextField, Button } fro
 import QRCode from 'qrcode';
 // import QrReader from 'react-qr-reader';
 // import axios from 'axios';
-import { useHistory, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
 
 function GenerateQR(){
 
-    let history = useHistory();
+    let history = useNavigate();
     const { id } = useParams();
    
     const [text, setText] = useState('');   
