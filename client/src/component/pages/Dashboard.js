@@ -5,7 +5,9 @@ import MovieStore from "./../movie/MovieStore";
 import ShowMovie from "./../movie/ShowMovie";
 import UpdateMovie from "./../movie/UpdateMovie";
 import AddMovie from "./../movie/AddMovie"
-import AddPayment from "./AddPayment";
+
+import AddCart from "./../cart/AddCart";
+
 
 function Dashboard() {
     return(
@@ -18,7 +20,9 @@ function Dashboard() {
                 <Route path="/movie-store"  element={<MovieStore/>}/>
                 <Route path="/movie-store/show-movie/:id"  element={<ShowMovie/>}/>
                 <Route path="/movie-store/add-movie"  element={<AddMovie/>}/>
-                <Route path="/add-payment"  element={<AddPayment/>}/>
+
+                <Route path="/movie-store/add-cart"  element={<AddCart/>}/>
+
             </Routes>
         </div>
     )

@@ -24,6 +24,7 @@ const userRouter = require("./routes/User/User.js");
 const authRouter = require("./routes/User/Auth.js");
 const movieRouter = require("./routes/movie/Movie.js");
 const paymentRouter = require("./routes/payment/Payment.js");
+const cartRouter = require("./routes/cart/Cart.js");
 
 app.get('/',(req, res)=>{
     res.send("Hello from node");
@@ -33,6 +34,7 @@ app.use("/user", userRouter);
 app.use("/auth", authRouter);
 app.use("/movie", movieRouter);
 app.use("/payment", paymentRouter);
+app.use("/cart", cartRouter);
 
 mongoose.connect(process.env.MONGO_URI, {
         useNewUrlParser: true

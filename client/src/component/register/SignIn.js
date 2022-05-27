@@ -85,7 +85,8 @@ export default function SignIn() {
 
 const getData = async () => {
     await axios.post('http://localhost:5000/auth/findname/' + email).then((data) => {
-      // cookies.set("name", data);
+      localStorage.setItem("userID", data.data.data); 
+      localStorage.setItem("email", data.data.data2); 
     })    
 }
 
