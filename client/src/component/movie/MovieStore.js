@@ -163,9 +163,15 @@ export default function MovieStore() {
                                                 </CardContent>
                                             </CardActionArea>
                                             <CardActions>
-                                                <Link to={`add-payment`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
-                                                    Book now
+
+                                                <Link to={`/dashboard/movie-store/add-cart/?name=${movie.name}&showTime=${movie.showTime}`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
+                                                Book now
                                                 </Button></Link>
+
+                                                {/* <Link to={`add-cart/${movie._id}`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
+                                                    Book now
+                                                </Button></Link> */}
+
                                                 <Link to={`show-movie/${movie._id}`} style={{ textDecoration: 'none' }}><Button size="small" color="primary">
                                                     Show Details
                                                 </Button></Link>

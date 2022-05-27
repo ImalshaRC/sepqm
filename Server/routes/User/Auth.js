@@ -103,7 +103,7 @@ router.route("/forgotemail/:email").post( async (req, res) => {
 			
 			var mailOptions = {
 				from: 'realasia@gmail.com',
-				to: 'chaminduimalsha@gmail.com',
+				to: req.body.email,
 				subject: 'Your account details',
 				html: `<p> Your password has been reset. Your new password is ${pass}. Please change your password after you login. You can do so by clicking on 'Edit your details' button.</p>`
 			};
