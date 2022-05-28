@@ -60,7 +60,6 @@ const Header = () => {
                 </Button>
                 <Menu id="fade-menu" anchorEl={anchorEl} keepMounted open={open} onClose={handleClose} TransitionComponent={Fade}>
                     <Link to='profile' style={{textDecoration:'none'}}><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
                     <Link to='Logout' style={{textDecoration:'none'}}><MenuItem onClick={handleClose}>LogOut</MenuItem></Link>
                 </Menu>
             </div>
