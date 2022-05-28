@@ -7,6 +7,7 @@ import UpdateMovie from "./../movie/UpdateMovie";
 import AddMovie from "./../movie/AddMovie"
 
 import AddCart from "./../cart/AddCart";
+import CartList from "./../cart/CartList";
 
 
 function Dashboard() {
@@ -22,6 +23,7 @@ function Dashboard() {
                 <Route path="/movie-store/add-movie"  element={<AddMovie/>}/>
 
                 <Route path="/movie-store/add-cart"  element={<AddCart/>}/>
+                <Route path="/cart"  element={<CartList/>}/>
 
             </Routes>
         </div>

@@ -57,11 +57,9 @@ export default function AddCart() {
 
         axios.post('http://localhost:5000/cart/add/', newCart).then(() => {
                     alert("Cart Added Successfully");
-                    console.log("1");
-
+                    window.location = "/dashboard/cart";
                 }).catch((err)=>{
                     alert(err)
-                    console.log("2");
                 })
                     
                 }
