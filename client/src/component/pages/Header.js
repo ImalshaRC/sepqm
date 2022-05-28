@@ -59,11 +59,9 @@ const Header = () => {
                     <SettingsIcon/>
                 </Button>
                 <Menu id="fade-menu" anchorEl={anchorEl} keepMounted open={open} onClose={handleClose} TransitionComponent={Fade}>
-                    <Link to='/profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
+                    <Link to='profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
                     <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <button  className='bg-transparent'>Log Out</button>
-                    </MenuItem>
+                    <Link to='Logout'><MenuItem onClick={handleClose}>LogOut</MenuItem></Link>
                 </Menu>
             </div>
 

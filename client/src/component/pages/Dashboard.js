@@ -12,7 +12,7 @@ import PaymentList from "./PaymentList";
 import AddPayment from "./AddPayment";
 import CartTable from "../cart/CartTable";
 import PaymentTable from "./PaymentTable";
-
+import Logout from "./Logout";
 import UpdateCart from "./../cart/UpdateCart";
 
 
@@ -38,6 +38,9 @@ function Dashboard() {
 
                 <Route path="/movie-store/cart-table"  element={<CartTable/>}/> 
                 <Route path="/cart/update-cart/:id"  element={<UpdateCart/>}/>
+
+                
+                <Route path="/Logout" element={<Logout />} />
 
             </Routes>
         </div>
