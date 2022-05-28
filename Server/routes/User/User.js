@@ -86,13 +86,10 @@ router.route("/find_id/:email").get(async (req, res) => {
 
 router.route("/update/:id").put(async (req, res) => {
     let userID = req.params.id;
-    const {firstName, surname, email, role, designation, password} = req.body;
 
-    const user = {
-        firstName, surname, email, designation, password
-        }
+    
 
-    const update = await User.findByIdAndUpdate(userID, user).then(() => {
+    const update = await User.findByIdAndUpdate(userID, req.body).then(() => {
 
         res.status(200).send({status: "data updated"});
     }).catch((err) => {
@@ -112,6 +109,18 @@ router.route("/delete/:id").delete(async (req, res) => {
         res.status(500).send({status: "error with delete data", error: err.message});
     })
 })
+
+router.route("/get/:id").get(async (req, res) => {
+    let userID = req.params.id;
+
+    await User.findById(userID).then((user) => {
+        res.json(user);
+    }).catch((err) => {
+        console.log(err.message);
+        res.status(500).send({status: "error with fetched user", error: error.message});
+    })
+})
+
 
 
 

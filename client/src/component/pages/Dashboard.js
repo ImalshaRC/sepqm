@@ -14,6 +14,7 @@ import CartTable from "../cart/CartTable";
 import PaymentTable from "./PaymentTable";
 import Logout from "./Logout";
 import UpdateCart from "./../cart/UpdateCart";
+import Profile from "./Profile";
 
 
 
@@ -41,6 +42,7 @@ function Dashboard() {
 
                 
                 <Route path="/Logout" element={<Logout />} />
+                <Route path="/profile" element={<Profile />} />
 
             </Routes>
         </div>

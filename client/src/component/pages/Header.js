@@ -59,9 +59,9 @@ const Header = () => {
                     <SettingsIcon/>
                 </Button>
                 <Menu id="fade-menu" anchorEl={anchorEl} keepMounted open={open} onClose={handleClose} TransitionComponent={Fade}>
-                    <Link to='profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <Link to='Logout'><MenuItem onClick={handleClose}>LogOut</MenuItem></Link>
+                    <Link to='/dashboard/profile'><MenuItem  onClick={handleClose}><Button style={{ textDecoration: 'none' }}>Profile</Button></MenuItem></Link>
+                    {/* <MenuItem onClick={handleClose}>My account</MenuItem> */}
+                    <Link to='Logout'><MenuItem onClick={handleClose}><Button style={{ textDecoration: 'none' }}>LogOut</Button></MenuItem></Link>
                 </Menu>
             </div>
 
