@@ -5,6 +5,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import SettingsIcon from '@material-ui/icons/Settings';
+import { emphasize } from '@material-ui/core';
 
 
 
@@ -25,21 +26,15 @@ const Header = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
 
+    const email = localStorage.getItem("email");
+    
+
     return(
+
+        
         <div>
 
-            <div className='float-end'>
-                <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
-                    <SettingsIcon/>
-                </Button>
-                <Menu id="fade-menu" anchorEl={anchorEl} keepMounted open={open} onClose={handleClose} TransitionComponent={Fade}>
-                    <Link to='/profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <button  className='bg-transparent'>Log Out</button>
-                    </MenuItem>
-                </Menu>
-            </div>
+            
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/dashboard">Movie Reservation</a>
@@ -56,6 +51,20 @@ const Header = () => {
                     <Link to='movie-store'><a class="nav-link">Movie Store</a></Link>
                 </li>
                 </ul>
+            </div>
+
+            <div className='float-end'>
+                {email}
+                <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
+                    <SettingsIcon/>
+                </Button>
+                <Menu id="fade-menu" anchorEl={anchorEl} keepMounted open={open} onClose={handleClose} TransitionComponent={Fade}>
+                    <Link to='/profile'><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
+                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={handleClose}>
+                        <button  className='bg-transparent'>Log Out</button>
+                    </MenuItem>
+                </Menu>
             </div>
 
 
