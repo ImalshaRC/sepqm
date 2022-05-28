@@ -14,6 +14,7 @@ import CartTable from "../cart/CartTable";
 import PaymentTable from "./PaymentTable";
 
 
+
 function Dashboard() {
     return(
         <div>
@@ -27,6 +28,7 @@ function Dashboard() {
                 <Route path="/movie-store/add-movie"  element={<AddMovie/>}/>
 
                 <Route path="/movie-store/add-cart"  element={<AddCart/>}/>
+                {/* <Route path="/cart"  element={<CartList/>}/> */}
 
                 <Route path="/qr/:token"  element={<GenerateQR/>}/>
                 <Route path="/add-payment/:id"  element={<AddPayment/>}/>

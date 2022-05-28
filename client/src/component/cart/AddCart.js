@@ -60,7 +60,10 @@ export default function AddCart() {
     const [name, setName] = useState(new URLSearchParams(search).get('name'));
     const [showTime, setShowTime] = useState(new URLSearchParams(search).get('showTime'));
     const [theatre, setTheatre] = useState("");
-    const [payment, setPayment] = useState(0);
+    const [payment, setPayment] = useState(500);
+
+    console.log(theatre)
+    console.log(payment)
 
     function sendData(e){
 

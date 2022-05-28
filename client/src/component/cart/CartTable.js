@@ -10,6 +10,7 @@ const columns = [
   { field: 'name', headerName: 'Movie Name', width: 200 },
   { field: 'showTime', headerName: 'Show Time', width: 200 },
   { field: 'theatre', headerName: 'Theatre', width: 200 },
+  { field: 'payment', headerName: 'Payment', width: 100 },
   {
     headerName:"Update Theatre",
     field: "Edit",
@@ -34,7 +35,6 @@ const columns = [
   }
   ,{
     headerName:"Make Payment",
-    field: "payment",
     width: 120,
     renderCell: (cellValues) => {
       return (
