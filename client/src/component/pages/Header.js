@@ -27,6 +27,11 @@ const Header = () => {
     const open = Boolean(anchorEl);
 
     const email = localStorage.getItem("email");
+
+    const logOut = () => {
+        handleClose();
+        localStorage.clear();
+    }
     
 
     return(
@@ -59,9 +64,10 @@ const Header = () => {
                     <SettingsIcon/>
                 </Button>
                 <Menu id="fade-menu" anchorEl={anchorEl} keepMounted open={open} onClose={handleClose} TransitionComponent={Fade}>
-                    <Link to='/dashboard/profile'><MenuItem  onClick={handleClose}><Button style={{ textDecoration: 'none' }}>Profile</Button></MenuItem></Link>
-                    {/* <MenuItem onClick={handleClose}>My account</MenuItem> */}
-                    <Link to='Logout'><MenuItem onClick={handleClose}><Button style={{ textDecoration: 'none' }}>LogOut</Button></MenuItem></Link>
+
+                    <Link to='/dashboard/profile' style={{textDecoration:'none'}}><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
+                    <Link to='/signin' style={{textDecoration:'none'}}><MenuItem onClick={logOut}>LogOut</MenuItem></Link>
+
                 </Menu>
             </div>
 
