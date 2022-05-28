@@ -46,7 +46,7 @@ export default function UpdateMovie() {
             }).catch((err) => {
                 alert(err);
             })
-            history.push("/movie-list");  
+            window.location = ("/dashboard/movie-list") ;
         }              
     }
 

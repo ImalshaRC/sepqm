@@ -57,10 +57,12 @@ const columns = [
           onClick={(event) => {
             axios.delete(`http://localhost:5000/movie/delete/${cellValues.row._id}`).then((res)=>{
               alert("Deleted");
+              window.location = ("/dashboard/movie-list");
             }).catch((err)=>{
                 alert(err.message)
             })
           }}
+          
         >
           Delete
         </Button>
