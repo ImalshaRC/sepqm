@@ -32,6 +32,9 @@ export default function MovieStore() {
     }
 
     const [searchText, setSearchText] = useState('');
+    const [role, setRole] = useState(localStorage.getItem("role"));
+
+    console.log(role);
 
 
     const handlesearchArea = value => {
@@ -106,12 +109,14 @@ export default function MovieStore() {
 
             <div className="searchPanel">
                 <div className="searchPanel_addNew">
-                <div className="d-flex">
+                {role==="movie_admin" &&
+                    <div className="d-flex">
                     <Button variant="contained" color="primary" onClick={goToAddMovie}> Add Movie</Button>
                     {/* <button onClick={goToProductSummary} className="newCustomer_btn mx-4">
                         Product Summary
                     </button>                     */}
                 </div>
+                }
                 </div>
                 <form className="searchBar mb-5">
                 <input type="text" onChange={ e => handlesearchArea(e.target.value)} placeholder="Search here..."/>
@@ -126,7 +131,7 @@ export default function MovieStore() {
             <i></i>
             <div className="tableContent">     
 
-            <div className="d-flex align-items-center container">
+            <div className="d-flex align-items-center container" style={{ marginLeft: 240 }}>
             <Grid
                 container
                 spacing={2}
@@ -138,11 +143,11 @@ export default function MovieStore() {
 
                 {
                     movies.map((movie, index) => (
-                        <div className="">  
+                        <div className="" >  
                             <div className="row">
                                 <div className="col">
                                     <div className="mx-2 mb-4">
-                                        <Card sx={{ maxWidth: 345 }}>
+                                        <Card sx={{ maxWidth: 250, maxHeight: 400, minWidth: 250, minHeight: 400 }}>
                                             <CardActionArea>
                                                 <CardMedia
                                                 component="img"

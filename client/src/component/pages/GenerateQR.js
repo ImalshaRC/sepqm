@@ -23,8 +23,8 @@ function GenerateQR(){
             unit: "px",
             format: [400, 400]
         });
-        pdf.addImage(imgData, "JPEG", 0, 0);
-        pdf.save(movieName + "_QR_Ticket.pdf");
+            pdf.addImage(imgData, "JPEG", 0, 0);
+            pdf.save(movieName + "_QR_Ticket.pdf");
         });
     };
 

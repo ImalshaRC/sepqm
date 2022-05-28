@@ -87,6 +87,7 @@ const getData = async () => {
     await axios.post('http://localhost:5000/auth/findname/' + email).then((data) => {
       localStorage.setItem("userID", data.data.data); 
       localStorage.setItem("email", data.data.data2); 
+      localStorage.setItem("role", data.data.data3); 
     })    
 }
 
@@ -151,7 +152,7 @@ const formValidation = () =>{
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/section/customer" variant="body2">
+              <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

@@ -51,6 +51,7 @@ export default function SignUp() {
     userName: "",
     email: "",
     phone: "",
+    role: "",
     designation: "",
     password: "",
     rePassword: ""
@@ -60,7 +61,7 @@ export default function SignUp() {
 
   const [error, setError] = useState("");
 
-  const { userName, email, phone, designation, password, rePassword } = user;
+  const { userName, email, phone, role, designation, password, rePassword } = user;
 
   const onInputChange = e => {
       setUser({...user, [e.target.name]: e.target.value});
@@ -144,6 +145,18 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField variant="outlined" required fullWidth label="Phone No" name="phone" value={phone} onChange={ e => onInputChange(e)}/>
+            </Grid>
+
+            <Grid item xs={12} className='mb-3'>
+              <FormControl fullWidth variant="outlined" className={classes.formControl}>
+                <InputLabel htmlFor="filled-age-native-simple">Select Your Role</InputLabel>
+
+                <Select native name="role" value={role} onChange={ e => onInputChange(e)}>
+                  <option aria-label="None" />
+                  <option value="customer">Customer</option>
+                  <option value="movie_admin">Movie Admin</option>
+                </Select>
+              </FormControl>
             </Grid>
             
             <Grid item xs={12}>

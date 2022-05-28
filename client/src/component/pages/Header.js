@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -18,6 +18,8 @@ const Header = () => {
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
+
+    const [role, setRole] = useState(localStorage.getItem("role"));
     
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -48,7 +50,7 @@ const Header = () => {
                 <ul class="navbar-nav">
                 <li class="nav-item active">
                     {/* <a class="nav-link" href="/movie-list">Movie List </a> */}
-                    <Link to='movie-list'><a class="nav-link">Movie List </a></Link>
+                    {role==="movie_admin" && <Link to='movie-list'><a class="nav-link">Movie List </a></Link>}
                 </li>
                 <li class="nav-item">
                     <Link to='movie-store'><a class="nav-link">Movie Store</a></Link>

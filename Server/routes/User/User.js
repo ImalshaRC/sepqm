@@ -86,7 +86,7 @@ router.route("/find_id/:email").get(async (req, res) => {
 
 router.route("/update/:id").put(async (req, res) => {
     let userID = req.params.id;
-    const {firstName, surname, email, designation, password} = req.body;
+    const {firstName, surname, email, role, designation, password} = req.body;
 
     const user = {
         firstName, surname, email, designation, password

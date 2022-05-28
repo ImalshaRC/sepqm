@@ -38,7 +38,7 @@ export default function AddMovie() {
                 }).catch((err) => {
                     alert(err);
                 })
-                history.push("/movie-store");  
+                window.location = ("/dashboard/movie-store")
             } 
             
             

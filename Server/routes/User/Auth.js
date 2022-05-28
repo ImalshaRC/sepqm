@@ -48,7 +48,7 @@ router.route("/findname/:email").post( async (req, res) => {
 
 		const user = await User.findOne({ email: Email });			
 
-		res.status(200).send({ data: user._id, data2: user.email, message: "logged in successfully" });
+		res.status(200).send({ data: user._id, data2: user.email, data3: user.role, message: "logged in successfully" });
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}
