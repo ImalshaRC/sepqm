@@ -8,10 +8,11 @@ router.route("/add").post((req,res) => {
     const name = req.body.name;
     const showTime = req.body.showTime;
     const theatre = req.body.theatre;
+    const payment = req.body.payment;
 
     const cart = new Cart({
 
-        email, name, theatre,  showTime
+        email, name, theatre,  showTime, payment
 
     })
 
@@ -43,10 +44,10 @@ router.route("/get/:id").get(async (req, res) => {
 
 router.route("/update/:id").put(async (req, res) => {
     let cartID = req.params.id;
-    const {email, name, showTime, theatre } = req.body;
+    const {email, name, showTime, theatre, payment } = req.body;
 
     const updateCart = {
-        email, name,  showTime, theatre
+        email, name,  showTime, theatre, payment
     }
 
     const update = await Cart.findByIdAndUpdate(cartID, updateCart).then(() => {

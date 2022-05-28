@@ -7,6 +7,11 @@ import UpdateMovie from "./../movie/UpdateMovie";
 import AddMovie from "./../movie/AddMovie"
 
 import AddCart from "./../cart/AddCart";
+import GenerateQR from "./GenerateQR";
+import PaymentList from "./PaymentList";
+import AddPayment from "./AddPayment";
+import CartTable from "../cart/CartTable";
+import PaymentTable from "./PaymentTable";
 
 
 function Dashboard() {
@@ -22,6 +27,12 @@ function Dashboard() {
                 <Route path="/movie-store/add-movie"  element={<AddMovie/>}/>
 
                 <Route path="/movie-store/add-cart"  element={<AddCart/>}/>
+
+                <Route path="/qr/:token"  element={<GenerateQR/>}/>
+                <Route path="/add-payment/:id"  element={<AddPayment/>}/>
+                <Route path="/payment-table"  element={<PaymentTable/>}/>
+
+                <Route path="/movie-store/cart-table"  element={<CartTable/>}/>
 
             </Routes>
         </div>

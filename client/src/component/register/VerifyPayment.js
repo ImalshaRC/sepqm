@@ -9,7 +9,7 @@ const VerifyPayment = () => {
     useEffect(async () => {            
         try{
             await axios.post('http://localhost:5000/payment/verify/' + token).then(() => {
-                window.location.href = "/payment-landed";
+                window.location.href = "/payment-landed/" + token;
             }) 
         }
         catch(err){

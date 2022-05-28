@@ -15,9 +15,12 @@ const CartSchema = new Schema({
         type: String,
         required: true
     },
-    
     theatre: {
         type: String,
+        required: true
+    },
+    payment: {
+        type: Number,
         required: true
     }
     

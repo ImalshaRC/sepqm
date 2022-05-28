@@ -11,6 +11,10 @@ const PaymentSchema = new Schema({
         type: String,
         required: true
     },
+    noOfTicket: {
+        type: Number,
+        required: true
+    },
 
     cvcNo: {
         type: String,
@@ -18,6 +22,10 @@ const PaymentSchema = new Schema({
     },
 
     holderName: {
+        type: String,
+        required: true
+    },
+    cartID: {
         type: String,
         required: true
     },
