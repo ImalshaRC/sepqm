@@ -13,6 +13,8 @@ import AddPayment from "./AddPayment";
 import CartTable from "../cart/CartTable";
 import PaymentTable from "./PaymentTable";
 
+import UpdateCart from "./../cart/UpdateCart";
+
 
 
 function Dashboard() {
@@ -34,7 +36,8 @@ function Dashboard() {
                 <Route path="/add-payment/:id"  element={<AddPayment/>}/>
                 <Route path="/payment-table"  element={<PaymentTable/>}/>
 
-                <Route path="/movie-store/cart-table"  element={<CartTable/>}/>
+                <Route path="/movie-store/cart-table"  element={<CartTable/>}/> 
+                <Route path="/cart/update-cart/:id"  element={<UpdateCart/>}/>
 
             </Routes>
         </div>

@@ -23,7 +23,7 @@ router.route("/add").post((req,res) => {
     
     var mailOptions = {
         from: 'realasia@gmail.com',
-        to: 'chaminduimalsha@gmail.com',
+        to: req.body.email,
         subject: 'Welcome to Movie App! You successfully created account.',
         text: 'That was easy!',
         html: `<p><em>To veirfy your account please click <a href="${link}" target="_blank" rel="noopener">Here</a>.</em></p>`

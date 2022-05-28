@@ -18,7 +18,7 @@ const columns = [
     renderCell: (cellValues) => {
       return (
         <div>
-            <Link to={`/update-movie/${cellValues.row._id}`}>
+            <Link to={`/dashboard/cart/update-cart/${cellValues.row._id}`}>
         <Button
           variant="contained"
           color="primary"
