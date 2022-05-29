@@ -15,6 +15,7 @@ import PaymentTable from "./PaymentTable";
 import Logout from "./Logout";
 import UpdateCart from "./../cart/UpdateCart";
 import Profile from "./Profile";
+import Home from "./Home";
 
 
 
@@ -43,6 +44,8 @@ function Dashboard() {
                 
                 <Route path="/Logout" element={<Logout />} />
                 <Route path="/profile" element={<Profile />} />
+
+                <Route path="/home" element={<Home />} />
 
             </Routes>
         </div>
