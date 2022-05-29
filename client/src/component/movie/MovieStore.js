@@ -16,6 +16,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {  Grid, CardActionArea, CardActions } from '@mui/material';
+import TextField from '@material-ui/core/TextField';
 
 import img1 from './img1.png';
 
@@ -106,32 +107,35 @@ export default function MovieStore() {
                 </Button>
                 </DialogActions>
             </Dialog>
+            
+            
+            <hr/>
 
             <div className="searchPanel">
                 <div className="searchPanel_addNew">
                 {role==="movie_admin" &&
-                    <div className="d-flex">
+                    <div style={{marginLeft:10}}>
                     <Button variant="contained" color="primary" onClick={goToAddMovie}> Add Movie</Button>
-                    {/* <button onClick={goToProductSummary} className="newCustomer_btn mx-4">
-                        Product Summary
-                    </button>                     */}
                 </div>
                 }
-                </div>
-                <form className="searchBar mb-5">
+                {/* <form className="searchBar mb-5">
                 <input type="text" onChange={ e => handlesearchArea(e.target.value)} placeholder="Search here..."/>
                     <button type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
-                </form>
+                        Search
+                    </button> */}
+                    <div style={{marginLeft:10}}>
+                    <TextField variant="outlined" margin="normal" label="Search Movie Here..." name="search" onChange={ e => handlesearchArea(e.target.value)}
+               autoFocus/></div>
+                {/* </form> */}
+                </div>
+                <br/>
+                
             </div>
 
             <i></i>
             <div className="tableContent">     
 
-            <div className="d-flex align-items-center container" style={{ marginLeft: 240 }}>
+            <div className="d-flex align-items-center container" style={{ marginLeft: "auto" }}>
             <Grid
                 container
                 spacing={2}
