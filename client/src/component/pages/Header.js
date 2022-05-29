@@ -66,6 +66,7 @@ const Header = () => {
                 <Menu id="fade-menu" anchorEl={anchorEl} keepMounted open={open} onClose={handleClose} TransitionComponent={Fade}>
 
                     <Link to='/dashboard/profile' style={{textDecoration:'none'}}><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
+                    <Link to='movie-store/cart-table' style={{textDecoration:'none'}}><MenuItem onClick={handleClose}>MyCart</MenuItem></Link>
                     <Link to='/signin' style={{textDecoration:'none'}}><MenuItem onClick={logOut}>LogOut</MenuItem></Link>
 
                 </Menu>
