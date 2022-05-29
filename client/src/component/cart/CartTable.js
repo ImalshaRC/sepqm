@@ -72,7 +72,7 @@ function CartTable() {
   },[])
 
   const loadPayment =() =>{
-    axios.get("http://localhost:5000/cart/").then((res) => 
+    axios.get("http://localhost:5000/cart/"+localStorage.getItem("email")).then((res) => 
     setTableData((res.data)))
 
   }

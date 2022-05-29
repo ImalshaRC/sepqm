@@ -23,26 +23,13 @@ router.route("/add").post((req,res) => {
     
     var mailOptions = {
         from: 'realasia@gmail.com',
-        to: req.body.email,
+        to: 'chaminduimalsha@gmail.com',
         subject: 'Welcome to Movie App! You successfully created account.',
         text: 'That was easy!',
         html: `<p><em>To veirfy your account please click <a href="${link}" target="_blank" rel="noopener">Here</a>.</em></p>`
     };
 
 
-
-
-
-    // const cardNo = req.body.cardNo;
-    // const amount = req.body.amount;
-    // const cvcNo = req.body.cvcNo;
-    // const holderName = req.body.holderName;
-
-    // const payment = new Payment({
-
-    //     cardNo, amount, cvcNo, holderName
-
-    // })
 
     transporter.sendMail(mailOptions, async function(error, info){
         if (error) {

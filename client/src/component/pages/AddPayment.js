@@ -46,7 +46,7 @@ export default function AddPayment() {
                 }).catch((err) => {
                     alert(err);
                 })
-                window.location = ("/dashboard/movie-store/cart-table");
+                window.location = ("/dashboard/payment-table");
             } 
             
           }catch(error){

@@ -23,8 +23,23 @@ router.route("/add").post((req,res) => {
     })
 })
 
-router.route("/").get((req, res) => {
-    Cart.find().then((user) => {
+// router.route("/").get((req, res) => {
+//     Cart.find().then((user) => {
+//         res.json(user);
+//     }).catch((err) => {
+//         console.log(err);
+//     })
+// })
+
+router.route("/:Email").get((req, res) => {
+
+    let Email = req.params.Email;
+
+    Cart.find(
+        {
+            email: Email
+        }
+    ).then((user) => {
         res.json(user);
     }).catch((err) => {
         console.log(err);
